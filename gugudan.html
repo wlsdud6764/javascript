@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <button id = "btn1">gugudan</button>
+    <script>
+       var $doc = document.getElementById('btn1');
+    //   var $doc = document.getElementsByName('btn1')[0];//태그네임으로 가져올경우 배열를 써주어야함
+       console.log($doc);
+       $doc.onclick =gugudan;//$doc를 눌렀을때 gugudan실행
+       var dan = 5;
+       function gugudan(dan){//gugudan(여기 매개값은 이벤트가 온다)
+           console.log(dan);
+           var newDan = dan.view.dan;
+        //    var dan = prompt("몇단?", "0");
+           
+        for(var i=1; i<=9; i++){
+            document.write(newDan +  "*" + i +"=" + newDan*i +"<br>");
+        }
+
+            for(var i=1; i<=9; i++){
+            for(var j=2; j<=9; j++){
+                document.write(j + "*" + i +"=" + i*j + "  "); 
+           
+        } document.write("<br>");
+           }
+           } 
+        
+        
+        
+        </script>
+    
+</body>
+</html>

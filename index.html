@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src = 'index.js'></script>
+    <!-- <script>
+        function myFunc(){
+            var pTag = document.getElementsByTagName('p');
+            console.log(pTag);
+        }
+    </script> -->
+</head>
+<body>
+    <h1>hellow,world</h1>
+    <p id="show">good</p>
+    <h2>what can javacript do?</h2>
+    <p>javacript can...</p>
+    <p>attrivute change</p>
+    <img id = 'img1' src="http://www.w3schools.com/js/pic_bulboff.gif" alt="whidth:100px">
+    <button onclick='myFunc()'>click to change</button>
+    <button onclick='document.getElementById("img1").src="http://www.w3schools.com/js/pic_bulboff.gif"'>Turn  Off</button>
+    <button onclick='document.getElementById("img1").src="http://www.w3schools.com/js/pic_bulbon.gif"'>Turn  On</button>
+   <script>
+        //document.getElementById('show').innerHTML='Hello'; .//html의 내용을 바꿀수있음
+        var name = "John"; //string
+        var age = 10; //number
+        var isRight = true; //boolean
+        var selected; //underfined
+        var colored = null; //null->object
+        console.log(name);
+        var selected = "hellow";// var는 중복 선언을 하여도 오류가 안남
+        // let selected  = "nice"; //중복서넌을 하지 못합
+        const firstname = "John";
+        // firstname = "Many";
+        console.log(firstname);
+        {
+            let age = 20;
+        }
+        console.log(age);
+    </script>
+</body>
+</html>
