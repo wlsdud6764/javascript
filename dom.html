@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <p id="p1">this is paragaph</p>
+        <p id="p2">this is another paragaph</p>
+
+    </div>
+    <button type="button" id="btn1">click</button>
+    <button type="button" id="btn2">remove</button>
+    <script>
+        document.getElementById('btn1').onclick = function () {
+            let $p = document.createElement('p');
+            let $text = document.createTextNode('this is other paragaph');
+            $p.appendChild($text);
+            let $doc = document.getElementById('div1');
+            $doc.appendChild($p);//붙이는것
+        }
+        document.getElementById('btn2').onclick = function () {
+            let $p = document.getElementsByTagName('p');
+            let $length = $p.length - 1;
+            console.log($p[$length]);
+            // let $id = document.getElementById('p1');
+            document.getElementById('div1').removeChild($p[$length]);
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var numbers = [3, 45, 4, 9, 16, 25]
+        var numbers2 = numbers.map(callbackFunc);
+        function callbackFunc(v, i, c) {
+            return v * 2;
+        }
+        console.log(numbers);
+        console.log(numbers2);
+
+
+        //array.fiter
+        let over18nums = numbers.filter(function(v,i,c){
+            return v > 18
+        });
+        
+    </script
+</body>
+
+</html>

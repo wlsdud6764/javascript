@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let fruits = ['orange', 'banana', 'apple'];
+        // console.log(fruits);
+        /*arrayobj.sort(sortFunction)
+        arrayobj는 임의의 Array 개체이다. sortFunction는 요소 순서를 결정하는 데 사용되는 함수
+        생략하면 오름차순, ASCII 문자 순서로 정렬.
+        sortFunction 인수에 함수를 지정하면 아래의 값 중 하나가 반환  
+        첫 번째 인수가 두 번째 인수보다 작을 경우 - 값
+        두 인수가 같을 경우 0
+        첫 번째 인수가 두 번째 인수보다 클 경우 + 값
+        */
+
+
+        // fruits.sort();
+        // console.log(fruits);
+
+        // let numbers = [40, 100, 1];
+        // numbers.sort((a, b) => a - b);
+        // console.log(numbers);
+
+        let person = [
+            { name: 'a', age: 50 },
+            { name: 'c', age: 10 },
+            { name: 'b', age: 20 }
+        ]
+        console.log(person);
+
+        // var person2 = person.map();///배열.map((요소, 인덱스, 배열) => { return 요소 });
+
+
+
+
+        // function callbackFunc.sort((val)){
+        //     return val[name];
+        // }
+
+
+
+        var nameary = "name"
+        person.sort((a,b) => {
+            return a[nameary]<b[nameary]? -1 : a[nameary]>b[nameary]? 1 :0;
+        });
+        console.log(person);
+
+
+
+        // var ageary = "age"
+        // person.sort((a, b) => {
+        //     return a[ageary] - b[ageary];
+        // });
+        // console.log(person);
+
+    </script>
+</body>
+
+</html>

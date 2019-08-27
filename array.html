@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="show"></p>
+    <script>
+        // let ary = ["Saavb", "Volvo", "Bmw"];
+        ary = [
+            { name: 'jhon', age: 30 },
+            { name: 'Mary', age: 40 },
+            { name: 'Hong', age: 20 }
+        ]
+        console.log(ary.length);
+        for (let i = 0; i < ary.length; i++) {
+            console.log(ary[i].name, ary[i].age);
+        }
+        // ary.push('sonata');//push는 ary의 마지막 부분에추가
+        // ary.pop();//뒤쪽제거
+        // ary.unshift('kia K5');
+        // ary.shift();//앞쪽 제거
+        console.log(ary);
+        // let $tag='<ui>';
+        let $tag = "<table border = '1'>";
+        $tag += "<tr><td><B>" + "No" + "</td><th>" + "Name" + "</td><th>" + "Age" + "</B></td></tr>";
+        ary.forEach( (val, ind, c) => {
+            $tag += "<tr><td>" + ++ind + "</td> <td>" + val.name + "</td><td>" + val.age + "</td></tr>";
+        });
+
+        // ary.forEach( (val, ind, c) => {//forEach 실행(값,인덱스,배열)
+        //     $tag += "<tr><td>" + ++ind + "</td> <td>" + va1 + "</td></tr>";
+        // });
+        // ary.forEach(function(va1, ind){
+        //     console.log(va1,ind);
+        //$tag += "<li>" + va1 + "</li>";
+        //  $tag += "<tr><td>" + ++ind + "</td> <td>" + va1 + "</td></tr>"; //++ind 는 ary는 0부터 시작하니깐 ++을 해서 1부터 시작하게한다
+        // });
+        $tag += '</table>';
+        console.log($tag);
+        document.getElementById('show').innerHTML = $tag;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" id="table1">
+        <tr id="tr1">
+            <td id = "td1">
+                이름
+            </td>
+        </tr>
+
+
+    </table>
+    <button type="button" id="btn1">click</button>
+    <!-- <button type="button" id="btn2">remove</button> -->
+    <script>
+        document.getElementById('btn1').onclick=function(){
+            let $tr = document.createElement('tr');
+            let $text = document.createTextNode('복진영')
+            $tr.appendChild($text);
+            // let $tr = document.getElementById('tr1');
+            // $tr.appendChild($td);
+            let $doc = document.getElementById('table1');
+            $doc.appendChild($tr);
+            console.log('table1');
+
+        }
+
+    
+    
+    
+    </script>
+</body>
+</html>

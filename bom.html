@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id ='show'>aaa</p>
+    <p id ='show'>bb</p>
+    <p id ='show'>ccc</p>
+    <p id ='show'>ddd</p>
+    <a href="http://naver.com">naver</a>
+    <a href="http://daum.com">daum</a>
+    <script>
+        // window.alert("hellow");//창띄우는것
+        // console.log(window);
+        var cnt = 0
+        window.setInterval(function(){
+            //    console.log(++cnt)
+            // document.getElementById('show').innerHTML=Date();//현재 시간보여줌
+            // window.location.href="http://naver.com"//이주소로이동
+        },1000);//1000은 초
+        // console.log(window.document.URL);//주소보기
+        console.log(document.getElementsByTagName('a'));
+        console.log( document.getElementById('show').innerHTML);
+        console.log(window);
+    
+    </script>
+</body>
+</html>
