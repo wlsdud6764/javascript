@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='show'></div>
+    <table id="tbl" border='1'></table>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let $xml = this.responseXML;
+                let $record = $xml.getElementsByTagName('record');
+                console.log($record);
+                let $tr, $id, $firstName, $lastName, $tdi, $tdf, $tdl, $tbl, $td;
+                $tbl = document.getElementById('tbl');
+                for (let i = 0; i < $record.length; i++) {
+                    $tr = document.createElement('tr');
+                    $tr.setAttribute("id",$record)
+
+
+                    // $id = document.createTextNode($record[i].childNodes[0].innerHTML);
+                    // $firstName = document.createTextNode($record[i].childNodes[1].innerHTML);
+                    // $lastName = document.createTextNode($record[i].childNodes[2].innerHTML);
+
+                    // $tdi = document.createElement('td');
+                    // $tdi.appendChild($id);
+                    // $tdf = document.createElement('td');
+                    // $tdf.appendChild($firstName);
+                    // $tdl = document.createElement('td');
+                    // $tdl.appendChild($lastName);
+                    // $tr.append($tdi, $tdf, $tdl);
+
+                    for (let k = 0; k < 6; k++) {
+                        $td = document.createElement('td');
+                        $td.appendChild(document.createTextNode($record[i].childNodes[k].innerHTML));
+                        $tr.appendChild($td);
+                    }
+
+                    $tbl.appendChild($tr);
+                }
+            }
+        }
+        xhttp.open("GET", "dataset.xml", true);
+        xhttp.send();
+
+        function calllback(){
+            console.log(this);
+            let $id = this.childNodes[0] = childNodes[0].nodeValues;
+            let $tr = document.getElementById($id);
+            if($tr.style.backgroundColor)
+            $tr.style.backgroundColor='';
+            else
+            $tr.style.backgroundColor='yellow';
+        }
+    </script>
+</body>
+
+</html>

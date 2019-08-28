@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id='show'></div> -->
+    <table id= "table1"border="1"></table>
+    <script>
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                let datas = JSON.parse(this.responseText);
+                let $tr, $text, $field,$td;
+                // let $table = document.createElement('table');
+                let $table = document.getElementById('table1');
+
+                datas.forEach(function (val) {
+                    $tr = document.createElement('tr');
+                   
+                    for ($field in val) {
+                         $td = document.createElement('td');
+                        $text = document.createTextNode(val[$field] );//id값을 text에 담고
+                        $td.appendChild($text);//test를 li에 붙인다
+                           $tr.appendChild($td);
+                    }
+                 
+                    $table.appendChild($tr);
+                });
+                console.log(datas);
+                console.log('id:' + datas[0].id);
+                console.log('fname:' + datas[0].first_name);
+                console.log('lname:' + datas[0].last_name);
+            }
+
+
+
+            ////////ui를 사용
+            // if (this.readyState == 4 && this.status == 200) {
+            //     console.log(this.responseText);
+            //     let datas = JSON.parse(this.responseText);
+            //     let $li, $text, $field;
+            //     let $ul = document.createElement('ul');
+            //     let $show = document.getElementById('show');
+
+            //     datas.forEach(function (val, ind) {
+            //         $li = document.createElement('li');
+            //         for ($field in val) {
+            //             $text = document.createTextNode(val[$field] + " , ");//id값을 text에 담고
+            //             $li.appendChild($text);//test를 li에 붙인다
+
+            //         }
+            //         $ul.appendChild($li);
+            //         $show.appendChild($ul);
+            //         // $text = document.createTextNode(val.id +",: ");
+            //         // $li.appendChild($text);
+            //         // $text = document.createTextNode(val.first_name +", ");
+            //         // $li.appendChild($text);
+            //         // $text = document.createTextNode(val.last_name);
+            //         // $li.appendChild($text);
+            //         // $li = document.createElement('li');
+            //         // $ul.appendChild($li);
+            //         // $show.appendChild($ul);
+
+
+            //     });
+            //     console.log(datas);
+            //     console.log('id:' + datas[0].id);
+            //     console.log('fname:' + datas[0].first_name);
+            //     console.log('lname:' + datas[0].last_name);
+            // }
+
+        }
+        xhttp.open("get", "MOCK_DATA.json", true);
+        xhttp.send();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="show">
+        <table id="table1" border=" 1"></table>
+    </div>
+    <script>
+
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            // console.log(this.readyState, this.status);
+            if (this.readyState === 4 && this.status === 200) {//서버와 통신할 준비가 완료
+                console.log(this.responseXML);
+                let $xml = this.responseXML;
+                let $record = $xml.getElementsByTagName('record');
+                $tbl = document.getElementById("table1");
+                // console.log("id: " + $record[0].childNodes[0].innerHTML);
+                // console.log("first name: " + $record[0].childNodes[1].innerHTML);
+                // console.log("last name: " + $record[0].childNodes[2].innerHTML);
+
+                // let $tr,$id,$firstname,$lastname,
+
+
+                // let $txt = "<ui>";
+                let $text = document.createTextNode;
+                for (let i = 0; i < 10; i++) {
+                    let $tr = document.createElement('tr');
+                    $tr.setAttribute("id", $record);
+                    for (let j = 0; j < 3; j++) {
+                        $td = document.createElement('td');
+                        $td.appendChild(document.createTextNode($record[i].childNodes[k].innerHTML));
+                        $tr.appendChild($td);
+                    }
+                    $tbl.appendChild($tr);
+                }
+
+                // $txt += "</ul>";
+                // document.getElementById('show').innerHTML= $txt;
+
+                // console.log("ready");
+                // document.getElementById("show").innerHTML=this.setRequestHeader;
+            }
+        }
+        xhttp.open("GET", "dataset.xml", true);
+        xhttp.send();
+        console.log("end");
+
+
+    </script>
+
+</body>
+
+</html>

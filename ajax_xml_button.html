@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='show'></div>
+    <input type="button" onclick="previous()" value='<<'>
+    <input type="button" onclick="next()" value='>>'>
+
+
+    <script>
+       let $page=98;
+       let maxPage;
+        displayxm1(0);
+        function displayxm1(a) {
+            let xhtp = new XMLHttpRequest();
+            xhtp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this)
+                    getXmlData(this, a);
+                }
+
+            }
+            xhtp.open('get', 'dataset.xml', true);
+            xhtp.send();
+
+        }
+        function getXmlData(a, b) {
+            console.log(a.responseXML, b);
+            let $xml = a.responseXML.getElementsByTagName('record');
+            maxPage = $xml.lenght;
+            console.log($xml);
+            let $tag = '<ul><li>id:' + $xml[b].childNodes[0].childNodes[0].nodeValue + "</li>"
+                + "<li> fName: " + $xml[b].childNodes[1].childNodes[0].nodeValue + "</li>"
+                + "<li> fName: " + $xml[b].childNodes[2].childNodes[0].nodeValue + "</li></ul>";
+            document.getElementById('show').innerHTML = $tag;
+        }
+
+        function previous() {
+            
+            if($page>0)
+            $page--;
+            displayxm1($page);
+        }
+
+        function next(){
+            if($page>$maxpage)
+            $page++;
+            displayxm1($page);
+        }
+    </script>
+</body>
+
+</html>
