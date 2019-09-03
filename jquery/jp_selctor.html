@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(btn).click(function () {
+                // $('ul li:first').hide();//list1의 첫번째만 없어짐
+                // $('ul li:first-child').hide();//hide는 안보이게 하는것
+                $('ul li:nth-child(2)').hide();//두번째 요소 없애기 특정 번째를 없애고 싶을 때는 nth-child(i) 사용
+                $('[href]').hide();
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <h2>this is test</h2>
+    <p>list:1</p>
+    <ul>
+        <li>coffe</li>
+        <li>milk</li>
+        <li>tea</li>
+    </ul>
+    <p>list:2</p>
+    <ul>
+        <li>coffe</li>
+        <li>milk</li>
+        <li>tea</li>
+    </ul>
+    <p><a href="http://www.w3school.com/html.">html</a></p>
+    <p><a href="http://www.w3school.com/html.">css</a></p>
+    <button id='btn'>click me</button>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#btn1").on(click,function(){
+            $('#test1').text('hellow world');
+        })
+        $("#btn2").on(click,function(){
+            $('#test2').html('hellow <b>world<b>');
+        })
+        $("#btn3").on(click,function(){
+            $('#test3').value('hellow world');
+        })
+        $("#btn4").on(click,function(){
+            $('#w3s').attr('herf','href="http://www.naver.com');
+        })
+        $("#btn5").on(click,function(){
+            $('#w3s').attr('herf',function(i,orig){
+                console.log(i,orig)
+        })
+
+    });
+    
+    </script>
+</head>
+<body>
+    <p id = 'test1'>this is a paragraph</p>
+    <p id = 'teat2'>this is another paragraph</p>
+    <p>input field: <input type="text " id="teat3" value="mickey mouse"></p>
+    <p><a href="http://www.w3scholls.com" id="w3s">w3scholls</a></p>
+    <button id="btn1">set text</button>
+    <button id="btn2">set html</button>
+    <button id="btn3">set value</button>
+    <button id="btn4">set attr</button>
+    <button id="btn5">set func</button>
+    
+</body>
+</html>

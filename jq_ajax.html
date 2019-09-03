@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "../MOCK_DATA.json ",
+                dataType: 'json',
+                success: function (result) {
+                    // console.log(result);
+                    // var datas = result;
+                    // $(datas)=JSON.stringify(result);
+                    // console.log(datas);a
+                    $table = $('<table>').attr({ 'id': 'tbl', 'border': '1' });
+                    $tr = $('<tr>').append($('<td>').text('id'),
+                        $('<td>').text('FirstName'),
+                        $('<td>').text('LastName'),
+                        $('<td>').html($("<input>").attr('type', 'checkbox').click(trClick1))    
+                    );
+                    $table.append($tr);
+                    
+                    
+                    var datas = result;
+                    $(datas).each(function (ind, val) {
+                        $tr = $('<tr>').append( $('<td>').text(val.id),
+                            $('<td>').text(val.first_name),
+                            $('<td>').text(val.last_name),
+                                $('<td>').html($("<input>").attr('type', 'checkbox').click(trClick))
+                        );
+                        $table.append($tr);
+                        // console.log(ind, val.id, val.first_name, val.last_name);
+                    });///$(datas).each
+                    $('#shows').append($table);
+                }// success: function (result)
+            })//$.ajax
+            function trClick(){
+                if ($(this).is(":checked"))
+                    $(this).parent().parent().css('background-color', 'yellow')
+                else
+                    $(this).parent().parent().css('background-color', 'white')
+            }
+
+            function trClick1(){
+                if ($(this).is(":checked"))
+                    $('#tbl').css('background-color', 'blue')
+                else
+                    $('#tbl').css('background-color', 'white')
+            }
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="shows"></div>
+</body>
+
+</html>

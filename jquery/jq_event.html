@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#p1').mouseenter(function () {
+                alter("you entered p1")
+                $('#p1').css('color', 'red')
+            })
+            $('#p1').mouseleave(function () {
+                alter("bye your p1")
+                $('#p1').css('color', 'blue')
+            })
+            $('#p2').hover(function () {
+                $('#p2').css("background-color", "yellow")
+            }), (function () {
+                $('#p2').css('background-color', 'white')
+            })
+
+
+            $('[name="fullname"]').on({
+                 "focus":function(){
+                $('[name="fullname").css('background-color','yellow');
+            }, "bulr" : function () {
+                $('[name="fullname"]').css('background-color','white');
+            }, "click" function () {
+                console.log("click")
+            }
+        });
+
+
+        $('[name="email"]').on({
+                "focus": function () {
+                    $('[name="email"]').css('background - color','red');
+            }, "bulr" : function () {
+                $('[name="email"]').css('background - color','white');
+            }, "click" function () {
+                console.log("click")
+            }
+
+            });
+        });
+
+
+
+    </script>
+</head>
+
+<body>
+    <p id='p1'>enter the paragraph</p>
+    <br>
+    <p id='p2'>enter the paragraph</p>
+    <br>
+    name: <input type="text" name="fullname"><br>
+    email: <input type="text" name="email">
+
+</body>
+
+</html>

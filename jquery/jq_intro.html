@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 라이브러리를 가져오는 방법 -->
+    <!-- <script src="./jquery-3.4.1.min.js"></script> -->
+    <!-- 라이브러리가 있는 인터넷주소를 가르쳐줌 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        //jquery로 코딩 라이브러리가 있어야사용가능함
+    $(document).ready(function(){
+        console.log($('p').eq[1]).html();
+        $('button').click(function(){
+            // $('p:firtst').hide();//태그 이름으로 호출할떄는 $
+            $('#test').hide();//id이름으로 호출을 하고 싶을때는 #사용
+
+
+        })
+    });
+    ///자바스크립트로 코딩
+    //$button= document.getElementsByTagName('button')[0].onclick=hideElement;
+    // function hideElement(){
+    //     var $p = document.getElementsByTagName('p');
+    //     for(var i =0; i<$p.length; i++){
+    //         $p$[i].style.display = 'none';
+    //     }
+
+    // }
+
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h2 class='test'>this is test</h2>
+    <p class = 'test'>this is paragreph</p>
+    <p id = 'test'>this is onothr paragarph</p>
+    <button>click</button>
+    
+</body>
+</html>

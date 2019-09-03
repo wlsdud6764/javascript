@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#btn1").on('click',function(){
+            $('p').append('this is append');
+        })
+        $("#btn2").on('click',function(){
+            $('ol').append('<li>list item</li>');
+        })
+        $("#btn3").on('click',function(){
+          $b=  $('<b>').text('prepend text');//<b>이렇게 쓰면 태그를 만들어줌
+                $('p').prepend($b);
+        })
+        $("#btn4").on('click',function(){
+            $li = $('<li>').text('list item');//<b>이렇게 쓰면 태그를 만들어줌
+                $('ol').prepend($li);
+        })
+
+                
+
+
+
+    });
+    </script>
+</head>
+<body>
+    <p>this is paragraph</p>
+    <p>this is onother paragraph</p>
+    <ol>
+        <li>list item1</li>
+        <li>list item2</li>
+        <li>list item3</li>
+    </ol>
+    <button id = 'btn1'>append text</button>
+    <button id = 'btn2'>append list</button>
+    <button id = 'btn3'>prepend text</button>
+    <button id = 'btn4'>prepend list</button>
+</body>
+</html>

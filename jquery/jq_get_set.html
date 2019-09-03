@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('#btn1').on("click",function(){
+           $text= $('test').text();
+            $('#demo').html($text);
+        })
+
+        $('#btn2').on("click",function(){
+            $('#demo').html($text).html();
+        }) 
+
+        $('#btn3').on("click",function(){
+            $('test2').val();
+            $('#demo').text($val);
+        }) 
+        $('#btn4').on("click",function(){
+            $attr = $('#w3s').attr('href');
+            $('#demo').text($attr);
+        }) 
+            
+            
+    });
+    </script>
+</head>
+<body>
+    <p id = 'teat'> this is some <b>bold</b>text in a paragraph</p>
+    <button id = 'btn1'>show text</button><br>
+    <button id = 'btn2'>show html</button>
+<br>
+    <p>name: <input type="text" id="text2" value="hellow world"></p>
+    <button id = 'btn3'>show value</button>
+
+    <p><a href="http://www.w3schools.com" id="w3s">w3school</a></p>
+    <button id = 'btn4'>show attr</button>
+
+    <p id='demo'>jjj</p>
+
+
+
+</body>
+</html>

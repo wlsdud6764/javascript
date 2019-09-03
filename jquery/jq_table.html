@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $table = $('<table>').attr({ 'id': 'tbl', 'border': '1' });
+            $tr = $('<tr>').append($('<td>').text('id'),
+                $('<td>').text('fname'),
+                $('<td>').text('lname'),
+                        $('<td>').html($("<input>").attr('type', 'checkbox').click(trClick1))
+            );
+            $table.append($tr);
+
+            
+            $tr = $('<tr>').append($('<td>').text('101'),
+                $('<td>').text('bok'),
+                $('<td>').text('jinyoung'),
+                $('<td>').html($("<input>").attr('type', 'checkbox').click(trClick))
+            );
+            $tr.attr('id', 101);
+            $table.append($tr);
+
+
+            $tr = $('<tr>').append($('<td>').text('102'),
+                $('<td>').text('hong'),
+                $('<td>').text('gildong'),
+                $('<td>').html($("<input>").attr('type', 'checkbox').click(trClick))
+            );
+            $tr.attr('id', 102);
+            $table.append($tr);
+
+            $('#show').append($table);
+
+            function trClick() { console.log($(this).parent().parent().attr('id'));
+                if ($(this).is(":checked"))
+                    $(this).parent().parent().css('background-color', 'yellow')
+                else
+                    $(this).parent().parent().css('background-color', 'white')
+            }
+            function trClick1(){
+                if ($(this).is(":checked"))
+                    $('#tbl').css('background-color', 'blue')
+                else
+                    $('#tbl').css('background-color', 'white')
+            }
+        });
+       
+
+    </script>
+</head>
+
+<body>
+    <div id='show'></div>
+
+</body>
+
+</html>
